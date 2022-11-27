@@ -1,0 +1,135 @@
+#EJERC 1
+def detectar(n):
+    lista=[]
+    for i in range(1,n+1):
+        lista.append([i])
+        for i in range(1,n+1):
+            if i%2==0:
+                print("Es par",i)
+            else:
+                print("Es impar", i)
+    print(lista)
+detectar(10)
+------------------------------------
+#EJERC 2
+n=10
+for i in range(1,n):
+    print("* "*i,"* "*(n-i-1))
+------------------------------------
+#EJERC 3
+n=int(input("ingrese un numero: "))
+for i in range(n):
+    print(" "*(n-i),"* "*i,)
+------------------------------------	
+#EJERC 4
+def regis(n):
+    lista=[]
+    for i in range(1,n+1,2):
+        lista.append(i)
+    print(lista)
+regis(100)
+------------------------------------
+#EJERC 5
+def mult():
+    num1=int(input("Ingrese un numero: "))
+    num2=int(input("Ingrese un numero: "))
+    if num1>=0 and num2>=0:
+        multi=num1*num2
+        print(multi)
+    else:
+        print("Ingrese un numero mayor a 0")
+        return(mult())
+mult()
+------------------------------------
+#EJERC 6
+def saludar():
+    nombre=input("Ingrese su nombre: ")
+    print("Hola querido usuario: ", nombre)
+def realizartarea():
+    tarea=input("Ingrese la actividad: ")
+    print("Hora de : ", tarea)
+------------------------------------
+#EJERC 7
+def saludar():
+    nombre=input("Ingrese su nombre: ")
+    print("Hola querido usuario: ", nombre)
+def realizartarea():
+    actividad=input("Ingrese su actividad: ")
+    print("Hora de : ", actividad)
+def despedirse():
+    nombre=input("Ingrese su nombre: ")
+    print("Adios querido usuario: ", nombre)
+def comp():
+    while True:
+        print("""Escribe una opcion"
+                1) Saludar
+                2) Actividad
+                3) Despedirse""")
+        opcion=input()
+
+        if opcion =='1':
+            saludar()
+            break
+        elif opcion=='2':
+            realizartarea()
+            break
+        else:
+            despedirse()
+            break
+comp()
+------------------------------------
+#EJERC 7
+
+def comp(a,b):
+    if a==b:
+        print(f"El numero : ",a,"es igual a : ",b)
+    elif a!=b:
+        print("Son numeros diferentes")
+        if a>b:
+            print(f"El numero : ", a ,"es mayor que : ", b)
+        elif b>=a:
+            print(f"El numero : " ,b, "es mayor que : " ,a)
+comp(8,9)
+------------------------------------
+#EJERC 8
+def calc():
+    import sys
+    script=sys.argv[0]
+    ruta=len(sys.argv)
+    argumento=str(sys.argv)
+    print("Nombre script: {}".format(script))
+    print("Ruta de doc: {}".format(ruta))
+    print("Lista de argumentos: {}".format(argumento))
+    
+calc()
+------------------------------------
+#EJERC 9
+list=[1,2,3,4,5]
+for i in range(len(list)):
+    list[i]=int(list[i])+1
+    print(int(list[i]))
+print(list)
+------------------------------------
+#EJERC 10
+def orac():
+    s = input("Ingrese un texto: ")
+    print(s.upper())
+    print(s.lower())
+    print(s.split())
+    print(s.count("a"))
+    print(s.find("a"))
+    print(s)
+orac()
+------------------------------------
+#EJERC 11
+
+class persona:
+	pass
+persona=persona()
+persona.apellido="Rodriguez"
+persona.nombre="Rodrigo"
+persona.edad="23"
+persona.dni="12345678"
+
+print(f"El Sr {persona.apellido},persona.nombre"f"Tiene edad, {persona.edad}"f"Y DNI: {persona.dni}")
+

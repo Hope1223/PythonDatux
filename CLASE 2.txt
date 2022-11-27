@@ -1,0 +1,208 @@
+#Iterar
+LISTA=[["ASDF",20],["ASDFASDF",17,["ASDFASDF",13]]
+
+for elemento in lista:
+	if elemento[1]>=18:
+		print("Esta persona es mayor de edad", elemento[0])
+----------------------------------------------
+diccionario={
+	"key1":[]
+}
+diccionar["key1"]
+----------------------------------------------
+listaNumeros=[]
+for i in range(1,10):
+    for j in range(1,10):
+        if j>5:
+            break
+        else:
+           listaNumeros.append([i,j])
+print(listaNumeros)
+-----------------------------------------------
+
+h = int(input('Ingrese la altura del triangulo: '))
+for f in range(h):
+    print('#'* (f+1))
+    
+######################
+
+
+numero=int(input("ingrese un numero:"))
+isPrimo=False
+
+for n in range(2,numero):
+    if numero % n==0:
+        isPrimo=True
+        break
+if isPrimo:
+	print("es primo")
+else:
+	print("no es primo")
+--------------------------------------------------
+def opciones():
+    while True:  
+            print("""Escribe una opcion"
+                    1) Sumar
+                    2) Restar
+                    3) Multiplicar""")
+            opcion=input()
+
+            if opcion =='1':
+                print(f'La suma es: ', float(a)+float(b))
+                break
+            elif opcion=='2':
+                print(f'La suma es: ', float(a)-float(b))
+                break
+            elif opcion=='3':
+                print(f'La suma es: ', float(a)*float(b))
+                break
+            else:
+                print('Ingresar los numeros previsualizados')
+if __name__ == '__main__':
+        print(f'Ingresar 2 numeros')
+        a=input('1er numero: ')
+        b=input('2do numero: ')
+    	opciones(a,b)
+--------------------------------------------------
+def comparar(a,b):
+        a=float(input("Ingrese un numero: "))
+        b=float(input("Ingrese un numero: "))
+        if a==b:
+            print(f"El numero : ",a,"es igual a : ",b)
+        elif a!=b:
+            print("Son numeros diferentes")
+        if a>b:
+            print(f"El numero : ", a ,"es mayor que : ", b)
+        elif b>=a:
+            print(f"El numero : " ,b, "es mayor que : " ,a)
+if __name__ == '__main__':
+    print(f'Ingresar 2 numeros')
+    a=input('1er numero: ')
+    b=input('2do numero: ')
+    comparar(a,b)
+---------------------------------------------------------
+def rango(start,stop,step=1):
+    return start+stop+step
+
+
+a=rango(1,10)
+b=rango(1,10,2)
+
+print(a,b)
+
+
+def calcularPrecio(precio,porcentajeDescuento=1):
+    return precio*porcentajeDescuento
+
+p1=calcularPrecio(100)
+p2=calcularPrecio(100,0.8)
+----------------------------------------------------------
+### cuando tienees indetermiados numero de argumentos en una lista
+def indeterminados_posicion(*args):
+    for arg in args:
+        print(arg)
+
+indeterminados_posicion(5,"Hola",[1,2,3,4,5],{'dia':'sabado'})
+#### cuando tienes indeterminados numero de argumentos llave valor 
+def indeterminados_nombre(**kwargs):
+    print(kwargs)
+    for kwarg in kwargs:
+        print(kwarg, "=>", kwargs[kwarg])
+
+indeterminados_nombre(n=5, c="Hola", l=[1,2,3,4,5])
+----------------------------------------------------------
+## aplicacion
+import sys
+
+def indeterminados_posicion(*args):
+    for arg in args:
+        print(arg)
+
+
+indeterminados_posicion(sys.argv)
+----------------------------------------------------------
+# por referencia  las listas ,los diccionarios 
+# conjuntos son mutables osea se pasan por referencia 
+# quiere decir que su valor al intentar hacer un copia en 
+# una funcion se altera
+lista=[1,2,3,4] 
+
+def aumentarLista(li):
+    print(li)
+    for i in li:
+        li[i-1]*=2
+
+aumentarLista(lista)
+print(lista)
+######
+## variables globales y variables locales
+variable=7
+def funcionSumar():
+    variable=10
+    print(variable)
+funcionSumar()
+print(variable)    
+------------------------------------------------------
+#############
+### recursividad 
+def jugar(intento : int =1 ):
+    respuesta = input("?De que color es una naranja? ")
+    print(f"tienes {intento-1} intento")
+    if respuesta.lower() != "naranja":
+        if intento > 1:
+            intento -= 1 
+            print(f"\nFallaste! Intentalo de nuevo te quedan {intento} intentos")             
+            jugar(intento)  # Llamada recursiva         
+        else:
+            print("\nPerdiste!")     
+    else:
+        print("\nGanaste!")
+
+def suma(numero:int):
+    if numero ==1:
+        return 1
+    else:
+        return numero+suma(numero-1)
+
+sumaTotal=suma(10)
+print(sumaTotal)
+
+
+def factorial(n):
+    if n==1:
+        return 1
+    else:
+        return n*factorial(n-1)
+
+factorial=factorial(5)
+print(factorial)
+#######################
+buscar_nom="Donde esta juan?"
+print(buscar_nom.find("juan"))
+print(buscar_nom.find("wanda") #no lo va encontrar
+
+index >>> permite buscar la palabra
+count>>> cuenta la palabra.
+#######################
+
+          my_string = "This string will be split"
+          print(my_string.split(sep=" "))
+
+          print(my_string.split(sep=" ", maxsplit=2)) #maxsplit -> delimita la cantidad de palabras a ser separadas de la cadena
+
+          # Find -> Realiza una busqueda en texto
+
+          my_string = "Where's Waldo?"
+          print(my_string.find("Waldo"))
+
+
+          print(my_string.find("Wenda")) # No se encotro palabra buscada
+
+          ### funcion genericas 
+          ## ES UN AYUDA DEL TYPEOF is(diversos tipos de datos) dentro de un string
+          """ variable=""
+          variable.isnumeric """
+
+#######
+
+

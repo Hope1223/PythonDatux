@@ -1,0 +1,351 @@
+#definicion de variables
+#input de valores para asignar las variables
+a=12
+b=input("este es un input de teclado")
+#manipulacion,comparacion ,operacion con las variables
+c=12+b
+#retornar o imprimir
+print(c)
+
+
+####
+##condicionales - nos diga si es mayor de edad
+
+edad=int(input("ingrese su edad:"))
+
+if(edad>=18):
+    print("es mayor de edad")
+else:
+    print("no es mayor de edad")
+
+
+edad=int(input("ingrese su edad:"))
+estadoAlumno=True
+if(estadoAlumno):
+    if(edad>=18):
+        print("es mayor de edad")
+    else:
+        print("no es mayor de edad")
+        
+##
+###if aninado 
+a=6
+b=20
+if a==5:
+    print("a vale ",a)
+    if b ==20:
+        #donde a sea 5 y b sea 20
+        print("y b vale ",b)
+    else:
+        #donde a sea 5 y b tenga un valor diferente a 20
+        print("a vale 5 y b no vale 20")
+else:
+    #donde no cumple ni un valor
+    print("a no vale 5")
+    
+### 
+##Escribir un programa que pida al usuario un numero entero 
+# y muestre por pantalla si es par o impar.
+
+numero=int(input("ingrese el numero"))
+
+residuode2=numero%2
+
+if residuode2 == 0:
+    print("es par")
+else:
+    print("es impar")
+## operador %
+
+residuo=12%7
+print(residuo)
+
+#12=7*1 + 5
+#d =D*q +r
+
+#Ejercicio
+
+salario = float(input('Ingrese su salario anual: '))
+tasa=0.0
+renta=0.0
+if salario>=0 and salario< 10000:
+    tasa=0.05
+elif salario >= 10000 and salario <20000:
+    tasa=0.15
+elif salario >= 20000 and salario <30000:
+    tasa=0.25
+elif salario >= 30000 and salario <40000:
+    tasa=0.35
+else:
+    tasa=0.45
+
+renta=tasa*salario
+
+print(renta)
+
+####
+#que vacuna toca segun la edad
+edad =int(input("ingrese su edad:"))
+vacuna=""
+
+
+if edad>=0 and edad<18:
+    vacuna="MODERNA"
+elif edad>=18 and edad <30:
+    vacuna="SINOPHARM"
+elif edad>=30 and edad<45:
+    vacuna="vacuna X"
+else :
+    vacuna="PFIZER"
+print("la vacuna es ",vacuna)
+print('la vacuna que te toca es {} con la edad {}'.format(vacuna,edad))
+print(f'la vacuna que tomar es {vacuna} por su edad {edad}')
+###
+### tipos de coleccion
+numeros=[1,2,3,4,5,6,"sad"]
+print(type (numeros))
+#propiedades
+elemento2=numeros[1]
+longitud=len(numeros)
+
+print(elemento2,longitud)
+
+#obtener ultimo elemento
+
+ultimoelemento=numeros[len(numeros)-1]
+print(ultimoelemento)
+print(numeros[-1])
+
+lista=["nombre",10,42,12,45,6]
+
+if "nombre" in lista:
+    print("el elemento existe en la lista")
+else:
+    print("el elemento no existe en la lista")
+
+lista=["nombre",10,42,12,45,6]
+
+if "nombre" in lista:
+    print("el elemento existe en la lista")
+else:
+    print("el elemento no existe en la lista")
+
+### lista anidada
+### palabra=['p','a','l']
+a=[1,2,3]
+b=[3,4,5]
+c=[6,7,"palabra"]
+
+d=[a,b,c]
+print(d[-1][-1])
+
+if type(d[-1][-1])==str:
+    print(d[-1][-1][-1])
+    
+#######
+
+lista=["nombre",10,42,12,45,6,7,8,9]
+print(lista)
+print("elementos",lista[:2])
+print("elementos 2",lista[2::3])
+print("elementos 3",lista[0:2:2])
+lista.append('add')
+print(lista)
+valor=lista.index(42)
+print(valor)
+lista.pop(1) # tienes que darle la posicion // removio el 10 ya que tiene la posicion 1
+print(lista)
+if 6 in lista:
+    lista.remove(6) #tienes que darle el valor
+print(lista)
+lista.reverse()
+print(lista)
+lista.clear()
+print(lista)
+#cambiar valor de un element de una lista lista[-1]=8
+###
+#statements
+#expresiones
+#asignaciones
+#estructuras de control 
+
+###
+
+## tuplas
+
+tupla=(1,2,3,1,5,[1,2,3],"texto",(1,2,3))
+print(type(tupla))
+print("pos1",tupla[0])
+print("posicion final",tupla[-1])
+
+### metodos de la tupla
+posicion=tupla.index(1)
+print("la posicion del valor que estoy ingresando",posicion)
+numeroDeVeces=tupla.count(1)
+print(numeroDeVeces) # las numero de  veces que se repite un valor
+
+####
+#diccionarios
+
+diccionario={} #inizializa un diccionario
+print("el tipo de dato (collection",type(diccionario))
+### llave -> valor 
+diccionario={
+    "key1":200,
+    "1.1":100,
+    "1.2":200
+}
+print("el diccionario ",diccionario)
+
+print(diccionario['key1']) #obtener el valor de la llave
+llaves=diccionario.keys()
+print(type(llaves))
+items=diccionario.items()
+print(items)
+
+diccionario["key1"]=diccionario["key1"]/2
+
+print(items)
+### diccionario Escuela
+
+Escuela={
+    'Alumnos':[
+        {
+            "DNI":78787878,
+            "NOMBRE":"GIANMARCO",
+            "GRADO":"1ERO"
+        },
+        {
+            "DNI":78787878,
+            "NOMBRE":"GIANMARCO",
+            "GRADO":"1ERO"
+        },
+    ],
+    'Profesores':[
+        {
+            "DNI":46464646,
+            "NOMBRE":"Profesor1",
+            "Cursos":["curso1","curso2"]
+        },
+        {
+            "DNI":46464646,
+            "NOMBRE":"Profesor1",
+            "Cursos":["curso1","curso2"]
+        }
+    ]
+}
+
+print(type(Escuela.get("Alumnos")))
+print(Escuela.get("Alumnos")[0]["DNI"])
+
+
+###
+#conjunto
+conj=set()
+print(type(conj))
+conj={1,2,3,4,5,6}
+conj2={4,5,6,7,8,9}
+
+#operacion de conjunto son :interseccion ,union , diferencia ,diferencia simetrica ,etc
+
+inter=conj.intersection(conj2)
+print(inter)
+union=conj.union(conj2)
+print(union)
+### el conjunto es una lista ??
+## si y no
+
+lista=[1,2,3,5,7]
+
+conj3=set(lista)
+print(conj3)
+
+lista2=list(conj3)
+print(lista2)
+
+
+###
+
+### ESTRUCTURAS DE CONTROL ITERATIVAS
+
+### bucles : while y for
+
+edad=10
+
+while edad<=20:
+
+    print("edad es menor o igual que",edad)
+    #edad=edad+1
+    edad+=1
+    if edad==18:
+        print("cumplio la mayoria de edad")
+        continue
+    print("saltate")
+    
+##
+print("Bienvenido al curso de python")
+
+while True:
+    print("""Escribe una opcion 
+            1)saludar
+            2)sumar 
+            3)salir""")
+    opcion=input()
+
+    if opcion == '1':
+        print("hola mundo")
+    elif opcion == '2':
+        print("ingresa 2 numero")
+        n1=float(input("numero 1"))
+        n2=float(input("numero 2"))
+        print(f"el resultado es {n1+n2}")
+    elif opcion == '3':
+        break;
+    else:
+        print("ingrese un opcion valida")
+        #
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+ ## bucle for 
+
+lista=[1,2,3,4,5,6,34,1]
+list2=["as","asa","as"]
+
+for elemento in lista:
+    print("este elemento es iterado",elemento)
+
+for elemento in list2:
+    print("este elemento es iterado",elemento)
+
+
+for posicion,elementoValor in enumerate(lista):
+    if posicion==4:
+        print("sucede en el primer caso")
+    print("enumarate",posicion,elementoValor)
+
+dicx={'k1':1,'k2':2,'k3':3}
+
+for variable1,variable2 in dicx.items():
+    print(variable1,variable2)
+
+print("for con strings")
+texto="hola mundo"
+
+for index,letra in enumerate(texto):
+    print(index,letra)
+
+### funcion rango
+## range(puntoinicio,stop,pasos)
+#agregar * para pasar a una lista 
+a=[*range(0,10,1)]
+print(a)
+
+## 
+print("for con range")
+for i in range(10):
+    print(i)
+
+print("entre rangos")
+
+for i in range(20,30):
+    print(i)
+                                    
