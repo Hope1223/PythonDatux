@@ -32,12 +32,15 @@ firulais.sonido()
 chispa.sonido()
 
 ------------------------------------
-#EJERCICIO 5
+#EJERCICIO 4
 
 import sys
 variable = sys.argv[0]
+variable1=sys._clear_type_cache()
+variable2=sys.pycache_prefix
 print(variable)
-
+print(variable1)
+print(variable2)
 ------------------------------------
 #EJERCICIO 6
 
@@ -78,4 +81,26 @@ else:
     print("No se encontro")
 
 print("La palabra" ,buscar, "se repite: ",cadena.count(buscar), "veces")
+
+---------------------------------------------------------------------------
+##IMPORTAR ARCHIVOS CSV DESDE UNA CARPETA
+import os
+ruta=os.getcwd()
+file_path=os.path.join(ruta,'clase2711','marketing_campaign.csv','r')
+print(fil_path)
+try:
+	with open(r"C:\\Users\\Usuario\\Desktop\\workspaces\\pythonoctnov\\clase2711\\marketing_campaign.csv",'r') a:
+		data=file.readlines()
+		print(data)
+except:
+	print("not found file")
+------------------------------------------------------------------------------
+import csv
+import urllib
+
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/forest-fires/forestfires.csv'
+respuesta = urllib.request.urlopen(url)
+archivo = csv.reader(response)
+for filas in archivo:
+    print(filas)
 
